@@ -4,6 +4,11 @@ package com.justnow.offer;
 public class Optimization {
 
     public int[] array;
+
+    public Optimization() {
+
+    }
+
     public Optimization(int n) {
         this.array = new int[n];
         for(int i=0; i<array.length; i++) {
@@ -34,4 +39,6 @@ public class Optimization {
             return array[n];
         }
     }
+
+    //使用循环的方式
 }
