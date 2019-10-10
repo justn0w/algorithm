@@ -7,7 +7,10 @@ public class Solution {
         Scanner scanner = new Scanner(System.in);
 
         int n = scanner.nextInt();
+        long start = System.currentTimeMillis();
         System.out.println(RectCover(n));
+        long end = System.currentTimeMillis();
+        System.out.println("程序运行的时间是" + (end -start) + "ms");
 
     }
 

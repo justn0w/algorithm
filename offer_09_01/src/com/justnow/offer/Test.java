@@ -7,6 +7,7 @@ public class Test {
         System.out.println(Integer.toBinaryString(-1));
         System.out.println(Integer.toBinaryString(-128));
         System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.toBinaryString(-1));
         System.out.println(BigInteger.valueOf(1));
     }
 }
