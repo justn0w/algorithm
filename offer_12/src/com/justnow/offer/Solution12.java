@@ -26,13 +26,16 @@ public class Solution12 {
         return count;
     }
 
+    /**
+     * 通过位运算巧妙的计算这个问题
+     * @param n
+     * @return
+     */
     public static int findNumberOne2(int n) {
-        String s = Integer.toBinaryString(n);
         int count = 0;
-        for (int i=0; i<s.length(); i++) {
-            if (s.charAt(i) == '1') {
-                count++;
-            }
+        while(n!=0) {
+            n = n & (n-1);
+            count++;
         }
         return count;
     }
