@@ -13,6 +13,11 @@ public class Solution16 {
         }
     }
 
+    /**
+     * 使用动态规划的方法
+     * @param length
+     * @return
+     */
     public static int getMaxResult(int length) {
         // 如果length小于等于3，则直接输出结果
         if (length < 2)

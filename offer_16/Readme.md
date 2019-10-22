@@ -31,7 +31,90 @@
 
 ```java
 
+    /**
+     * 使用动态规划的方法
+     * @param length
+     * @return
+     */
+    public static int getMaxResult(int length) {
+        // 如果length小于等于3，则直接输出结果
+        if (length < 2)
+            return 1;
+        if (length ==2)
+            return 1;
+        if (length == 3)
+            return 2;
+
+        // 如果length大于3，则又有新的内容
+        int[] results = new int[length + 1];
+        // 这里说明下，现在length大于4，那么当子问题分别为0,1,2,3时，我们直接不分不切割，此时就是子问题对应的最优解
+        results[0] = 0;
+        results[1] = 1;
+        results[2] = 2;
+        results[3] = 3;
+
+        int max = 0;
+        for (int i = 4; i <= length; i++) {
+            max = 0;//每次都有重置最大值，因为有可能上次求出的分段内容最大值大于f(j)*f(j-1)的值，最终得到的很有可能是上次的最大值
+            for (int j = 1; j <= i / 2; ++j) {
+                int result = results[j] * results[i-j];
+                if (max < result) {
+                    max = result;
+                }
+                results[i] = max;
+            }
+        }
+        max = results[length];
+        return max;
+    }
 ```
+
+#### 4 尝试贪婪算法 
+分为下面集中情况：
+* n<2,返回0
+* n==2,最大乘积为1
+* n==3,最大乘积为2
+* n==4,最大乘积为2*2=4
+* n>=5,需要进行以下说明
+
+当n>=5时，我们可以分别切割为1*(n-1)、2*(n-2)、3*(n-3)、4*(n-4)、5*(n-5)
+得到的时3*(n-3)得到的结果最大，紧跟着的是2*(n-2)。所以应该尽可能多的将绳子切割为3。
+此时，会出现剩余为1或2两种情况。如果为1的话，我们需要将剩余的长度修改为4，因为4*(n-4)>1*(n-1)；如果剩余为2的话，没有办法再切割了。
+
+所以，其中算法的思路是：
+* 向下取整，求3的倍数
+* 如果剩余的长度为1，可将3的倍数减一(使剩余的内容为4)
+* (总长度-3*3的倍数)/2 的到2的倍数
+* 最终的结果是pow(3,3的倍数)*pow(2,2的倍数)
+
+```java
+    /**
+     * 使用贪婪算法
+     * @param length
+     * @return
+     */
+    public static int getMaxResult2(int length) {
+        // 如果length小于等于3，则直接输出结果
+        if (length < 2)
+            return 1;
+        if (length ==2)
+            return 1;
+        if (length == 3)
+            return 2;
+        //求出可以切割成3的个数
+        int timesof3 = length / 3;
+        //当以3为单位来切割时，如果最后一段的长度为4，需求将最后一段按照2+2来切割
+        if (length - timesof3 * 3 == 1) {
+            timesof3--;
+        }
+
+        //求出可以剩余可以切割为2的个数
+        int timesof2 = (length - timesof3 * 3) / 2;
+
+        return (int)(pow(3, timesof3)) * (int)(pow(2, timesof2));
+    }
+```
+
 
 
 
