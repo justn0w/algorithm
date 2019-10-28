@@ -4,8 +4,8 @@ public class Node {
     public int data;    //节点数据
     public Node leftChild; //左子节点的引用
     public Node rightChild;//右子节点的引用
-    boolean isDelete; //表示节点是否被删除
-
+    public boolean isDelete; //表示节点是否被删除
+    public boolean isFirst;
     public Node(int data) {
         this.data = data;
     }
