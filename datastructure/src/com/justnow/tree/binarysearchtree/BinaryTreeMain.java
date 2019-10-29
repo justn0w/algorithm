@@ -207,6 +207,7 @@ public class BinaryTreeMain implements BinarySearchTree {
             if (current.rightChild != null) {
                 queue.add(current.rightChild);
             }
+            current = queue.poll();
         }
     }
 
