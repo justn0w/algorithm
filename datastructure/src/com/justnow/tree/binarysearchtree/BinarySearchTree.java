@@ -19,7 +19,8 @@ public interface BinarySearchTree {
     public void postOrder(Node node);
     // 非递归后序遍历
     public void nonRecursivePostOrder(Node node);
-
+    // 树的层次遍历
+    public void bfs(Node node);
     // 查找最大值
     public Node findMax();
     // 查找最小值

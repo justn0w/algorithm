@@ -1,5 +1,7 @@
 package com.justnow.tree.binarysearchtree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class BinaryTreeMain implements BinarySearchTree {
@@ -25,6 +27,7 @@ public class BinaryTreeMain implements BinarySearchTree {
 
     /**
      * 递归查找节点
+     *
      * @param key
      * @return
      */
@@ -86,6 +89,7 @@ public class BinaryTreeMain implements BinarySearchTree {
     /**
      * 非递归前序遍历
      * 根节点 -> 左子树 -> 右子树
+     *
      * @param root
      */
     @Override
@@ -117,6 +121,7 @@ public class BinaryTreeMain implements BinarySearchTree {
 
     /**
      * 非递归中序遍历
+     *
      * @param root
      */
     @Override
@@ -124,7 +129,7 @@ public class BinaryTreeMain implements BinarySearchTree {
         Stack<Node> stack = new Stack<>();
         Node current = root;
         while ((current != null) || (!stack.isEmpty())) {
-            if (current != null ) {
+            if (current != null) {
                 stack.push(current);
                 current = current.leftChild;
             } else {
@@ -150,6 +155,7 @@ public class BinaryTreeMain implements BinarySearchTree {
      * 非递归后序遍历
      * https://blog.csdn.net/superballball/article/details/83689248
      * https://blog.csdn.net/gatieme/article/details/51163010
+     *
      * @param root
      */
     @Override
@@ -184,6 +190,26 @@ public class BinaryTreeMain implements BinarySearchTree {
 
     }
 
+    /**
+     * 树的层次遍历方法
+     *
+     * @param root
+     */
+    @Override
+    public void bfs(Node root) {
+        Queue<Node> queue = new LinkedList<Node>();
+        Node current = root;
+        while ((current != null) || (!queue.isEmpty())) {
+            System.out.println(current.data);
+            if (current.leftChild != null) {
+                queue.add(current.leftChild);
+            }
+            if (current.rightChild != null) {
+                queue.add(current.rightChild);
+            }
+        }
+    }
+
     // 找最大值
     @Override
     public Node findMax() {
@@ -209,6 +235,7 @@ public class BinaryTreeMain implements BinarySearchTree {
 
     /**
      * 删除节点
+     *
      * @param data
      * @return
      */
@@ -241,8 +268,10 @@ public class BinaryTreeMain implements BinarySearchTree {
         // 中序遍历
         //bt.inOrder(bt.root);
         // 后序遍历
-        bt.postOrder(bt.root);
-        bt.nonRecursivePostOrder(bt.root);
+        // bt.postOrder(bt.root);
+        // bt.nonRecursivePostOrder(bt.root);
+
+        bt.bfs(bt.root);
         // 查找最大值和最小值
         System.out.println("**************\n最大值");
         System.out.println(bt.findMax());
