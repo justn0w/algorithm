@@ -65,6 +65,7 @@ a d e e<br>
 ### 8 offer_17
 在微软产品Excel中，用A表示第1列，B表示第2列.....Z表示第26列,AA表示第27列, AB表示第28列......依次类推。请写出一个函数，输入用字母表示的列号编码，输出它是第几列。
 
+## 第十周 周二
 ### 9 offer_18
 字符串的全排序，如输入"ABC",输出
 A B C <br>
@@ -73,3 +74,7 @@ B A C <br>
 B C A <br>
 C B A <br>
 C A B 
+
+## 第十周 周三
+### 10 offer_19
+实现函数```double Power(double base ,int exponent)```,求 ```base``` 的 ```exponent``` 次方。不得使用库函数，同时不需要考虑大数问题。
