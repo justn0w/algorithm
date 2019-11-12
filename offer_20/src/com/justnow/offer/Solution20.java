@@ -64,7 +64,6 @@ public class Solution20 {
             if (isBeginZero && number[i] != '0') {
                 isBeginZero = false;
             }
-
             if (!isBeginZero) {
                 System.out.print(number[i]);
             }
