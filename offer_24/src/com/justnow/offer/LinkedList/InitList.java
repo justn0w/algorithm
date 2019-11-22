@@ -1,6 +1,4 @@
-package com.justnow.LinkedList;
-
-import java.util.List;
+package com.justnow.offer.LinkedList;
 
 public class InitList {
     /**
@@ -33,7 +31,7 @@ public class InitList {
      * @param headNode
      */
     public void printList(ListNode headNode) {
-        ListNode currentNode = headNode;
+        ListNode currentNode = headNode.next;
         while(currentNode != null) {
             System.out.println(currentNode.val);
             currentNode = currentNode.next;
@@ -53,18 +51,5 @@ public class InitList {
         }
     }
 
-    /**
-     * 按照头插法，插入节点
-     * @param headNode
-     * @param node
-     */
-    public void addToHead(ListNode headNode, ListNode node) {
-        if (headNode.next != null) {
-            node.next = headNode.next;
-            headNode.next = node;
-        } else {
-            headNode.next = node;
-        }
-    }
 
 }
