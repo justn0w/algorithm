@@ -53,13 +53,13 @@ public class ReverseList {
      * 1->2->3->4->null
      * 链表反转后：
      * null<-1<-2<-3<-4
-     * 这种解法秒就秒在，将后一个结点的next指向前一个。涉及到三个结点，是挺难的！
+     * 这种解法秒就秒在，将后一个结点的next指向前一个。涉及到三个结点，是挺难的！自己画图总结！
      * @param head
      * @return
      */
     public ListNode reverserList02(ListNode head) {
         if (head == null) {
-            return null;
+            return head;
         }
         ListNode pre = null, cur = head;
         while (cur != null) {
@@ -70,4 +70,6 @@ public class ReverseList {
         }
         return pre;
     }
+
+
 }

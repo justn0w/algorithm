@@ -18,4 +18,31 @@ public class ListOperate {
         head.next = node;
     }
 
+    /**
+     * 创建一个单链表节点
+     * @param value
+     * @return
+     */
+    public ListNode createListNode(int value) {
+        ListNode node = new ListNode();
+        node.val = value;
+        node.next = null;
+        return node;
+    }
+
+    /**
+     * 串联两个节点
+     * @param currentNode
+     * @param nextNode
+     */
+    public void connectListNodes(ListNode currentNode, ListNode nextNode) {
+        if (currentNode == null) {
+            System.out.println("error to connect two nodes");
+        }
+
+        currentNode.next = nextNode;
+    }
+
+
+
 }
