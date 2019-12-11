@@ -43,6 +43,34 @@ public class ListOperate {
         currentNode.next = nextNode;
     }
 
+    /**
+     * 打印head开头的结点
+     * @param head
+     */
+    public void showListNode(ListNode head) {
+        if (head == null) {
+            return ;
+        }
+        while(head != null) {
+            System.out.println(head.val);
+            head = head.next;
+        }
+    }
+
+    /**
+     * 打印结点的值
+     * @param node
+     * @return
+     */
+    public int printNodeValue(ListNode node) {
+        if (node == null) {
+            System.out.println("该结点为空");
+            return -1;
+        }
+        return node.val;
+    }
+
+
 
 
 }

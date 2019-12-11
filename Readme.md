@@ -104,3 +104,23 @@ C A B
 ## 第十二周 周四
 ### 15 offer_24
 题目：如果字符串是通过单链表来存储的，请判断该字符串是否为一个回文字符串
+
+## 第十三周 周一 2019-11-25
+反转一个链表
+示例：
+> 输入：1->2->3->4->5->NULL
+输出：5->4->3->2->1->NULL
+F:\algorithm\datastructure\src\com\justnow\linkedlist\reverse\ReverseList.java
+## 第十三周 周二 2019-11-26
+判断一个链表中是否存在环
+F:\algorithm\datastructure\src\com\justnow\linkedlist\hasCycle\HasCycleSolution.java
+
+## 第十三周 周四 2019-11-28
+合并两个有序的单链表
+F:\algorithm\datastructure\src\com\justnow\linkedlist\combine\CombineSortedList.java
+
+
+## 2019-12-10
+### offer_25
+题目：表示数值的字符串
+请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串“+100”、“5e2”、“-123”、“3.1416”及“-1E-16”都表示数值，但“12e”、“1a3.14”、“1.2.3”、“+-5”及“12e+5.4”都不是。
