@@ -11,7 +11,6 @@ public class Node {
     }
 
     //打印节点内容
-
     @Override
     public String toString() {
         return "value: " + data;
